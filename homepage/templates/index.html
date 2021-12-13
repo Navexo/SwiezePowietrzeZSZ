@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        navigator.geolocation.getCurrentPosition(setPosition);
+        var data = JSON.parse("{{data|escapejs}}");
+
+        function setPosition(position){
+            let closeDist=100;
+            let closeId;
+            let closeName;
+            let ownLata = position.coords.latitude;
+            let ownLona = position.coords.longitude;
+            for(let x in data["stations"]){
+                lat = data["stations"][x]["gegrLat"]
+                lon = data["stations"][x]["gegrLon"]
+                let a = ownLata - lat; 
+                let b = ownLona - lon;
+                let c=Math.sqrt((a*a)+(b*b));
+                if(c<closeDist){
+                    closeDist=c;
+                    closeId=data["stations"][x]["id"]
+                    closeName=data["stations"][x]["stationName"]
+                }
+        }
+        console.log(closeId)
+        console.log(closeDist)
+        console.log(closeName)
+        window.location = '' + closeId
+        }
+    </script>
+</body>
+</html>

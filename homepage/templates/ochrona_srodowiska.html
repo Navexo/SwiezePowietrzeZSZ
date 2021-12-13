@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak dbać o środowisko</title>
+        <script src="hidebar.js"></script>
+            <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">      
+</head>
+<body>
+    <div id="container">
+        <div id="menu">
+            <h1 class="heading">Świeże powietrze</h1>
+            <a class="img" href="https://www.zsz-gostyn.com.pl/"><img src="{%static 'zsz-gostyn.png'%}" alt="Logo ZSZ Gostyń" /></a>
+
+        </div>
+        <div id="navbar">
+                <a href="{% url 'home' %}">Strona Główna</a>
+                <a class="active" href="{% url 'ochrona_srodowiska' %}">Jak chronić środowisko?</a>
+        </div>
+        <div id="logo">
+            
+        </div>
+
+        </div>
+        <div class="content">
+            
+           <div class="textpage"> 
+               <h1>Jak chronić środowisko</h1>
+               <p>Źródłami antropogenicznymi czyli wynikającymi z działalności człowieka są przede wszystkim transport, spalanie paliw, energetyka, przemysł, rolnictwo itp. Emitowane są głównie następujące substancje : tlenek węgla, tlenki azotu, węglowodory, tlenki siarki i pyły.</p>
+
+               <p>W celu zapewnienia ochrony powietrza powinno się redukować rozmiary już zaistniałej emisji zanieczyszczeń i racjonalnie modyfikować technologie produkcji, wytwarzające szczególnie uciążliwe zanieczyszczenia. Aby działania te były skuteczne trzeba przede wszystkim szczegółowo rozpoznać rodzaje i własności powstających zanieczyszczeń oraz miejsca i warunki wprowadzania ich do atmosfery. To pozwoli nam ocenić stan i stopień zanieczyszczenia oraz związane z nim zagrożenie, a dzięki temu zakres i sposób działania.</p>
+               
+               Ochrona powietrza może być realizowana przez podejmowanie działań takich jak:
+               
+               <p>Instalowanie wydajnych filtrów kominowych. Nawet w przypadku starszych technologii urządzenia takie zatrzymują znaczną część zanieczyszczeń, w przypadku nowszych technologii filtry zazwyczaj są montowane seryjnie.</p>
+               
+               <p>Wdrażanie nowych, czystszych technologii przemysłowych. W praktyce nowsze technologie są czystsze (mniejsza emisja gazów/pyłów) oraz mniej energochłonne. Cześć szkodliwych substancji stosowanych  w przemyśle zastępowana jest przez inne, bezpieczniejsze (np. zamienniki freonów).</p>
+               
+               <p>Modyfikacji istniejących technologii i większa hermetyzacja produkcji. W praktyce oznacza to np. odsiarczanie węgla przed jego spaleniem, czy też dbałość o odizolowanie produkcji od środowiska. W przypadku ogrzewania domów korzystna jest zmiana paliwa na mniej emisyjne (np. gaz ziemny zamiast węgla) oraz ocieplanie budynków.</p>
+               
+               <p>Inwestowanie w ekologiczne środki transportu i modyfikacja już istniejących. Oznacza to nowsze nieemisyjne, lub nisko emisyjne samochody wyposażone w lepsze katalizatory, modyfikowane paliwa (np. bezołowiowe), rozbudowę transportu elektrycznego (np. szynobusy, trolejbusy). Ważna jest także promocja transportu rowerowego, czy wodnego oraz wdrażanie nowych technologii w transporcie lotniczym.</p>
+               
+               Budowanie izolacyjnych pasów zieleni wokół zakładów przemysłowych. Zieleń zatrzymuje pewną ilość zanieczyszczeń gazowych, szczególnie pyłów.
+               
+               
+               Wprowadzanie odnawialnych źródeł energii m.in takich jak:
+               <ul>
+               <li>energia słoneczna (kolektory, panele słoneczne )</li>
+               <li>energia wodna (elektronie wodne, pływowe)</li>
+               <li>energia wiatrowa (turbiny wiatrowe)</li>
+               <li>Eliminowaniu ciężkiego transportu w miastach ( budowa obwodnic );</li>
+               <li>Ograniczanie ruchu samochodowego i przestawanie komunikacji na pojazdy elektryczne.</li>
+               <li>Tworzenie stref dla pieszych w centrach miast i osiedli.</li>
+               <li>Korzystanie z miejskiej komunikacji lub roweru.</li>
+               </ul>
+
+            <a href="https://www.niebieskiatmoludek.pl/strefa-wiedzy/zapobieganie-zanieczyszczeniu-powietrza-ochrona-powietrza/">Artykuł</a>
+               
+           </div>
+        </div>
+        <div id="footer">
+           <p> Strona zrobiona przez: Jakuba Podgórskiego, Aleksandra Olszaka i Bartosza Jędrysiaka. <br />
+            Prawa zastrzeżone<br>
+            API wykorzystane na tej stronie pochodzi ze <a href="www.gov.pl">strony rządowej</a></p>
+        </div>
+        <footer>
+            
+        </footer>
+    </div>
+</body>
+</html>

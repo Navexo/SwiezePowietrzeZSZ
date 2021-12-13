@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Świeże powietrze ZSZ</title>
+        
+            <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">      
+</head>
+<body>
+    <div id="container">
+        <div id="menu">
+            <h1 class="heading">Świeże powietrze</h1>
+            <a class="img" href="https://www.zsz-gostyn.com.pl/"><img src="{% static 'zsz-gostyn.png' %}" alt="Logo ZSZ Gostyń" /></a>
+
+        </div>
+        <div id="navbar">
+                <a class="active" href="{% url 'home' %}">Strona Główna</a>
+                <a href="{% url 'ochrona_srodowiska' %}">Jak chronić środowisko?</a>
+        </div>
+        <div id="logo">
+            
+        </div>
+
+        </div>
+        <div class="content">
+            <div class="stan-powietrza">
+                <div class="label">Jakość powietrza w twojej okolicy:</div>
+                <div class="g-air-quality" id="air_qualityf">Dobry stan</div>
+                <div class="label">Lokalizacja najbliższej stacji:</div>
+                <div class="localization" id="local">Lokalizacja najbliższej stacji</div>
+                
+          </div>
+           <div class="textpage">
+               <h1>O co tu chodzi?</h1>
+            <p>Strona została zrobiona przez 3 uczniów szkoły <a href="zsz-gostyn.com.pl">ZSZ Gostyń</a> na projekt pod nazwą "Mini Hackathon" organizowany przez <a href="https://nowaakademia.org/mini-hackathon-edycja-ii/%22%3ENową"> Akademie</a>. 
+                <ul>
+                    <li>Jakub Podgórski - Projektant i grafik</li>
+                    <li>Olek Olszak - Programista</li>
+                    <li>Bartosz Jędrysiak - Pomocnik</li>
+                </ul>
+                Projekt ma na celu zwiększyć świadomość młodych ludzi na temat jakości powietrza i pokazać jak mogą zadbać o jakość powietrza w swojej okolicy 
+                </p>
+           </div>
+        </div>
+        <div id="footer">
+            <p> Strona zrobiona przez: Jakuba Podgórskiego, Aleksandra Olszaka i Bartosza Jędrysiaka. <br />
+             Prawa zastrzeżone<br>
+             API wykorzystane na tej stronie pochodzi ze <a href="www.gov.pl">strony rządowej</a></p>
+         </div>
+        <footer>
+            
+        </footer>
+    </div>
+    <script>
+        var data = JSON.parse("{{data|escapejs}}");
+        var city = data["city"]
+        let quality = document.getElementById("air_qualityf")
+        let citydiv = document.getElementById("local")
+        quality.innerHTML=data["stations"]["stIndexLevel"]["indexLevelName"]
+        citydiv.innerHTML=city
+        quality.style="font-weight: bold;"
+        
+    </script>
+</body>
+</html>
